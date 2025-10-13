@@ -4,6 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -131,23 +136,5 @@
 
   ::selection {
     @apply bg-foreground text-background;
-  }
-}
-
-@layer utilities {
-  .animated-underline {
-    @apply relative;
-
-    &::before {
-      content: "";
-      @apply absolute bottom-1 left-4 right-4 h-[0.1em] min-h-[1px] origin-right scale-x-0 bg-current transition duration-500 ease-in-out;
-    }
-
-    &:hover:before,
-    &[data-state="open"]:before,
-    &[data-active="true"]:before,
-    &:focus-within:before {
-      @apply origin-left scale-x-100;
-    }
   }
 }

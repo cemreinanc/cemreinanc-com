@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
+import { Geist, Geist_Mono } from "next/font/google";
+import { Footer } from "~/app/footer";
+import { Header } from "~/app/header";
 import { Providers } from "~/app/providers";
 import { TailwindIndicator } from "~/components/ui/tailwind-indicator";
 import { ThemeProvider } from "~/components/ui/theme-provider";
@@ -11,8 +12,14 @@ import { cn } from "~/lib/utils";
 import "./globals.css";
 import "lenis/dist/lenis.css";
 
-const inter = Inter({
-  variable: "--font-sans",
+const geist = Geist({
+  variable: "--font-geist",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -20,10 +27,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: getURL(),
   title: {
-    default: "next-starter | kraftend",
-    template: "%s | kraftend",
+    default: "Cemre Inanc",
+    template: "%s | Cemre Inanc",
   },
-  description: `Kraftend's default boilerplate with Next.js.`,
+  description:
+    "Full stack developer and creative technologist based in Barcelona, with over 10 years of experience.",
   openGraph: {
     type: "website",
     url: getURL(),
@@ -31,22 +39,28 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    creator: "@kraftend",
-    siteId: "@kraftend",
+    creator: "@cemreinanc",
+    site: "@cemreinanc",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={cn(inter.variable)} lang="en" suppressHydrationWarning>
-      <body>
+    <html className={cn(geist.variable, geistMono.variable)} lang="en" suppressHydrationWarning>
+      <body className="flex min-h-screen w-full flex-col">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           disableTransitionOnChange
           enableSystem
         >
-          <Providers>{children}</Providers>
+          <Providers>
+            <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
+              <Header />
+              {children}
+              <Footer />
+            </div>
+          </Providers>
           <TailwindIndicator />
           <Analytics />
         </ThemeProvider>
