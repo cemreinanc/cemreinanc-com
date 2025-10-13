@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Cemre Inanc",
   },
   description:
-    "Full stack developer and creative technologist based in Barcelona, with over 10 years of experience.",
+    "A full stack developer who builds websites, interactive platforms and web apps for events, museums, and cultural projects. I run Kraftend and often collaborate with partner agencies; much of my work has supported larger organizations like Nike, Beko, BBVA, Samsung, Netflix, Red Bull and many more.",
   openGraph: {
     type: "website",
     url: getURL(),
