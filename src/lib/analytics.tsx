@@ -54,9 +54,9 @@ function UmamiAnalytics() {
 }
 
 export function Analytics() {
-  if (isClient && isProd) {
-    console.log(signatureLog);
-  }
+  //if (isClient && isProd) {
+  //  console.log(signatureLog);
+  //}
 
   return (
     <>
