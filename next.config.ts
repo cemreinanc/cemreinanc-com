@@ -5,6 +5,7 @@ import { env } from "~/env";
 const config: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
+  cacheComponents: true,
   logging: {
     fetches: {
       fullUrl: true,
