@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`kraftend/ne
 
 ## Getting Started
 
-Use Node.js 26.8.1 and Bun 1.4.2. With fnm installed, select the project's Node version and install dependencies:
+Use Node.js 24.20.0 and Bun 1.4.2. With fnm installed, select the project's Node version and install dependencies:
 
 ```bash
 fnm use --install-if-missing
